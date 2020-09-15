@@ -1,7 +1,7 @@
-# A Problem on Sticks 
-## TREE2
-#### CHECK BOUNDARY CONDITION WITH 0
-### Code
+A Problem on Sticks 
+TREE2
+CHECK BOUNDARY CONDITION WITH 0
+
 /* package codechef; // don't place package name! */
 
 import java.util.*;
@@ -43,3 +43,9 @@ class Codechef
 		
 	}
 }
+
+
+
+
+
+////////////////////////////////////////////////////////////////USING HASH MAPS//////////////////////////////////////////////////////////////////////////////////
