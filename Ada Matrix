@@ -1,0 +1,65 @@
+sort the matrix in row-major order ― for each valid i and j, she wants the cell (i,j) to contain the value (i−1)⋅N+j.
+Output the no. of transpose operations required
+
+//////////////////////////////////////////////////////////CODE////////////////////////////////////////////////////////////////////////
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner sc = new Scanner(System.in);
+		int t = sc.nextInt();
+		while (t-- >0){
+		    int n = sc.nextInt();
+		    int arr[] = new int [n];
+		    //input first row only
+		    for (int i=0; i<n*n;i++){
+		        if(i<n){
+		            arr[i] = sc.nextInt();
+		        }
+		        else{
+		            sc.nextInt();
+		        }
+		    }
+        
+        int count =0;
+        boolean check[] = new boolean[n];
+		    // assigning T?F to boolean arrray if the index is has correct value or not
+		    for (int i= n-1;i>=0;i--){
+		        if(arr[i] != i+1){
+		            check[i] = false;
+		        }
+		        else{
+		            check[i] = true;
+		        }
+		    }
+		    
+		    
+		   //if the value is false all the values ahead will bw changed 
+		    for (int i=n-1; i>=0;i--){
+		        if(!check[i])
+		        {
+		            count++;
+		            
+		            for(int j=i;j>=1;j--)
+		            {
+		                if(check[j])
+		                check[j]=false;
+		                else
+		                check[j]=true;
+		            }
+		            
+		        }
+		    }
+		    
+		    System.out.println(count);
+		}
+	}
+}
